@@ -24,13 +24,20 @@ window.addEventListener("load",function() {
 
     mySlides2Container = document.getElementsByClassName('mySlides2');
 
-    movedownContainer = document.getElementById('movedown');
-    movedownContainer.addEventListener('mouseover', movedown);
-    movedownContainer.addEventListener('mouseleave', moveup);
+    movedownContainerA = document.getElementById('movedownA');
+    movedownContainerA.addEventListener('mouseover', movedownA);
+    movedownContainerA.addEventListener('mouseleave', moveupA);
+
+    movedownContainerB = document.getElementById('movedownB');
+    movedownContainerB.addEventListener('mouseover', movedownB);
+    movedownContainerB.addEventListener('mouseleave', moveupB);
     
     movedownElement1 = document.getElementById('movedown1');
     movedownElement2 = document.getElementById('movedown2');
     movedownElement3 = document.getElementById('movedown3');
+    movedownElement4 = document.getElementById('movedown4');
+    movedownElement5 = document.getElementById('movedown5');
+    movedownElement6 = document.getElementById('movedown6');
   
     //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
     // slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
@@ -46,16 +53,52 @@ window.addEventListener("load",function() {
     
 })
 
-function movedown(){
+function movedownA(){
   movedownElement1.style.marginTop = '10%'
+  movedownElement1.innerHTML = '<img src="images/services/1.jpg" alt="services 1" class="img-fluid">'+
+                                '<br><img src="images/arabesco.png" style=\'margin-left:40%\'><br><h3>Descrição do serviço 1<h3>'
   movedownElement2.style.marginTop = '20%'
+  movedownElement2.innerHTML = '<img src="images/services/2.jpg" alt="services 2" class="img-fluid">'+
+                                '<br><img src="images/arabesco.png" style=\'margin-left:40%\'><br><h3>Descrição do serviço 2<h3>'
   movedownElement3.style.marginTop = '30%'
+  movedownElement3.innerHTML = '<img src="images/services/3.jpg" alt="services 3" class="img-fluid">'+
+                                '<br><img src="images/arabesco.png" style=\'margin-left:40%\'><br><h3>Descrição do serviço 3<h3>'
 }
 
-function moveup(){
+function movedownB(){
+  movedownElement4.style.marginTop = '30%'
+  movedownElement4.innerHTML = '<img src="images/services/4.jpg" alt="services 4" class="img-fluid">'+
+                                '<br><img src="images/arabesco.png" style=\'margin-left:40%\'><br><h3>Descrição do serviço 4<h3>'
+  movedownElement5.style.marginTop = '20%'
+  movedownElement5.innerHTML = '<img src="images/services/5.jpg" alt="services 5" class="img-fluid">'+
+                                '<br><img src="images/arabesco.png" style=\'margin-left:40%\'><br><h3>Descrição do serviço 5<h3>'
+  movedownElement6.style.marginTop = '10%'
+  movedownElement6.innerHTML = '<img src="images/services/6.jpg" alt="services 6" class="img-fluid">'+
+                              '<br><img src="images/arabesco.png" style=\'margin-left:40%\'><br><h3>Descrição do serviço 6<h3>'
+}
+
+function moveupA(){
   movedownElement1.style.marginTop = '0%'
+  movedownElement1.innerHTML = '<img src="images/services/1.jpg" alt="services 1" class="img-fluid">'+
+                               '<div id=\'services-content1\'></div>'
   movedownElement2.style.marginTop = '0%'
+  movedownElement2.innerHTML = '<img src="images/services/2.jpg" alt="services 2" class="img-fluid">'+
+                              '<div id=\'services-content2\'></div>'
   movedownElement3.style.marginTop = '0%'
+  movedownElement3.innerHTML = '<img src="images/services/3.jpg" alt="services 3" class="img-fluid">'+
+                              '<div id=\'services-content3\'></div>'
+}
+
+function moveupB(){
+  movedownElement4.style.marginTop = '0%'
+  movedownElement4.innerHTML = '<img src="images/services/4.jpg" alt="services 4" class="img-fluid">'+
+                               '<div id=\'services-content4\'></div>'
+  movedownElement5.style.marginTop = '0%'
+  movedownElement5.innerHTML = '<img src="images/services/5.jpg" alt="services 5" class="img-fluid">'+
+                              '<div id=\'services-content5\'></div>'
+  movedownElement6.style.marginTop = '0%'
+  movedownElement6.innerHTML = '<img src="images/services/6.jpg" alt="services 6" class="img-fluid">'+
+                              '<div id=\'services-content6\'></div>'
 }
 
 // NEXT AND PREVIOUS CONTROL
