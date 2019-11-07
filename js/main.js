@@ -8,6 +8,8 @@ const seconds = 2000;
 
 var myThumbsContainer;
 
+var movedownElement1, movedownElement2, movedownElement3;
+
 window.addEventListener("load",function() {
     var i;
 
@@ -21,6 +23,14 @@ window.addEventListener("load",function() {
     myThumbsContainer = document.getElementsByClassName('myThumbs');
 
     mySlides2Container = document.getElementsByClassName('mySlides2');
+
+    movedownContainer = document.getElementById('movedown');
+    movedownContainer.addEventListener('mouseover', movedown);
+    movedownContainer.addEventListener('mouseleave', moveup);
+    
+    movedownElement1 = document.getElementById('movedown1');
+    movedownElement2 = document.getElementById('movedown2');
+    movedownElement3 = document.getElementById('movedown3');
   
     //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
     // slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
@@ -36,9 +46,21 @@ window.addEventListener("load",function() {
     
 })
 
+function movedown(){
+  movedownElement1.style.marginTop = '10%'
+  movedownElement2.style.marginTop = '20%'
+  movedownElement3.style.marginTop = '30%'
+}
+
+function moveup(){
+  movedownElement1.style.marginTop = '0%'
+  movedownElement2.style.marginTop = '0%'
+  movedownElement3.style.marginTop = '0%'
+}
+
 // NEXT AND PREVIOUS CONTROL
 function plusSlides(n){
-  console.log('n = ' + n + ' si = ' + slideIndex);
+  //console.log('n = ' + n + ' si = ' + slideIndex);
   clearInterval(myTimer);
   if (n < 0){
     showSlides(slideIndex -= 1);
@@ -55,7 +77,7 @@ function plusSlides(n){
 }
 
 function plusSlides2(n){
-  console.log('n2 = ' + n + ' si2 = ' + slideIndex2);
+  //console.log('n2 = ' + n + ' si2 = ' + slideIndex2);
   clearInterval(myTimer2);
   if (n < 0){
     showSlides2(slideIndex2 -= 1);
@@ -76,7 +98,7 @@ function showSlides(n){
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
 
-  console.log('|slides| = ' + slides.length);
+  //console.log('|slides| = ' + slides.length);
 
   if (n > slides.length) {slideIndex = 1;}
   if (n < 1) {slideIndex = slides.length;}
@@ -96,7 +118,7 @@ function showSlides2(n){
   var slides = document.getElementsByClassName("mySlides2");
   var dots = document.getElementsByClassName("dot2");
 
-  console.log('|slides2| = ' + slides.length);
+  //console.log('|slides2| = ' + slides.length);
 
   if (n > slides.length) {slideIndex2 = 1;}
   if (n < 1) {slideIndex2 = slides.length;}
@@ -112,23 +134,23 @@ function showSlides2(n){
 }
 
 pause = () => {
-  console.log('opa, pausou');
+ // console.log('opa, pausou');
   clearInterval(myTimer);
 }
 
 pause2 = () => {
-  console.log('opa, pausou2');
+ // console.log('opa, pausou2');
   clearInterval(myTimer2);
 }
 
 resume = () =>{
-  console.log('opa, soltou');
+ // console.log('opa, soltou');
   clearInterval(myTimer);
   myTimer = setInterval(function(){plusSlides(slideIndex)}, seconds);
 }
 
 resume2 = () =>{
-  console.log('opa, soltou2');
+ // console.log('opa, soltou2');
   clearInterval(myTimer2);
   myTimer2 = setInterval(function(){plusSlides2(slideIndex2)}, seconds);
 }
